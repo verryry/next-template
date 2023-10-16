@@ -1,0 +1,5 @@
+.navbarColouring {
+  background: linear-gradient(to right, #c2f3f3, #52bfe0, #2536d1) !important;
+  width: 100%;
+  position: fixed;
+}
