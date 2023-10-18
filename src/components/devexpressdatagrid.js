@@ -322,8 +322,8 @@ export default function DevExpressDataGrid(props) {
             allowUpdating: props.allowUpdating,
             allowDeleting: props.allowDeleting,
         })
-        // forceRefresh(true)
-    }, [props])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
 
     const onEditingStart = (e) => {

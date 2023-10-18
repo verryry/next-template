@@ -2,7 +2,7 @@ import axios from "axios";
 import { useMutation, useQuery } from "@tanstack/react-query";
 
 
-export const getHttpRequest = (baseUrl, store, url, key, refetchOnWindowFocus) => {
+export const useGetHttpRequest = (baseUrl, store, url, key, refetchOnWindowFocus) => {
     return useQuery({
         queryFn: async () => {
             const result = await axios.get(baseUrl + url, {
@@ -17,7 +17,7 @@ export const getHttpRequest = (baseUrl, store, url, key, refetchOnWindowFocus) =
     })
 }
 
-export const postHttpRequest = (baseUrl, store, url, { onSuccess }) => {
+export const usePostHttpRequest = (baseUrl, store, url, { onSuccess }) => {
     return useMutation({
         mutationFn: async (body) => {
             try {
@@ -37,7 +37,7 @@ export const postHttpRequest = (baseUrl, store, url, { onSuccess }) => {
     })
 }
 
-export const putHttpRequest = (baseUrl, store, url, { onSuccess }) => {
+export const usePutHttpRequest = (baseUrl, store, url, { onSuccess }) => {
     return useMutation({
         mutationFn: async (body) => {
             try {
@@ -57,7 +57,7 @@ export const putHttpRequest = (baseUrl, store, url, { onSuccess }) => {
     })
 }
 
-export const destroyHttpRequest = (baseUrl, store, url, { onSuccess }) => {
+export const useDestroyHttpRequest = (baseUrl, store, url, { onSuccess }) => {
     return useMutation({
         mutationFn: async (id) => {
             try {

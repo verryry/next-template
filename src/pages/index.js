@@ -90,6 +90,7 @@ export default function Home(props) {
 
   useEffect(() => {
     handleSessionToken('checkLogin', store, router, '/dashboard')
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -97,7 +98,7 @@ export default function Home(props) {
       <HeadMetaData
         title="Login Website"
         ogImageUrl="https://cdn.discordapp.com/attachments/1050790741334569091/1151943122117480558/V6_Academy_Banner_Assets.png"
-        metaDescription="Suplemen belajar lo, buat ilmu tech industry. Gak bermaksud jadi pengganti bootcamp ataupun kuliah. Hanya berharap jadi pelengkap aja."
+        metaDescription="Data Maintenance"
       />
       <nav className={`navbar navbar-expand-md navbar-light navbarColouring`}>
         <Link className="navbar-brand" href="/">

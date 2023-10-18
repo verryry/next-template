@@ -74,3 +74,52 @@ export const showLoading = (dispatch = '', isLoading) => {
             break;
     }
 }
+
+export const autoLogout = (time, store, router, dispatch) => {
+    let timer;
+    const events = [
+        "load",
+        "mousemove",
+        "mousedown",
+        "click",
+        "scroll",
+        "keypress",
+    ];
+
+    const handleLogoutTimer = () => {
+        const logoutDelay = time * 60000; // 60 seconds
+        const clearTimer = () => {
+            clearTimeout(timer);
+        };
+        const removeEventListener = () => {
+            events.forEach((event) => {
+                window.removeEventListener(event, resetTimer);
+            });
+        };
+        const logoutUser = () => {
+            destroySession();
+            console.log("logout");
+        };
+        timer = setTimeout(() => {
+            clearTimer();
+            removeEventListener();
+            logoutUser();
+        }, logoutDelay);
+    };
+
+    const destroySession = () => {
+        handleSessionToken('destroy', store, router, '/', dispatch)
+        handleSessionUser('destroy', store, dispatch)
+    }
+
+    const resetTimer = () => {
+        if (timer) clearTimeout(timer);
+    };
+
+    return events.forEach((event) => {
+        window.addEventListener(event, () => {
+            resetTimer();
+            handleLogoutTimer();
+        });
+    });
+}

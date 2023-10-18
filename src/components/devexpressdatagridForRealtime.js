@@ -26,8 +26,7 @@ export default function DevExpressDataGridRealTime(props) {
 
     useEffect(() => {
         columnDraw()
-
-        // forceRefresh(true)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const columnDraw = () => {

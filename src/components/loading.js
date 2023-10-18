@@ -9,6 +9,7 @@ export default function Loading(props) {
         props.store.subscribe(() => {
             toggleLoading(props.store.getState().isLoading.isLoading)
         })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const toggleLoading = (status = false) => {

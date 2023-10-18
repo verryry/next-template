@@ -4,7 +4,7 @@
 }
 
 .navbarColouring {
-  background: linear-gradient(to right, #c2f3f3, #52bfe0, #2536d1) !important;
+  background: linear-gradient(to right, #68f3f3, #52bfe0, #2536d1) !important;
   width: 100%;
   position: fixed;
 }
@@ -15,4 +15,8 @@
   right: 10px;
   transform: translate(50%, 50%);
   margin-right: 15px;
+}
+
+.nav-link:hover {
+  background-color: rgb(107, 226, 107) !important;
 }
