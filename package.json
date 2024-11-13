@@ -93,5 +93,6 @@
     "lint-staged": "^15.2.7",
     "prettier": "3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.14"
-  }
+  },
+  "packageManager": "yarn@4.5.1"
 }
